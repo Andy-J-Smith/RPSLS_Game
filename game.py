@@ -1,9 +1,12 @@
 from player import Player
+from ai import Ai
 
 class Game:
 
     def __init__(self):
-        pass
+        self.player = Player()
+        self.Ai = Ai()
+
 
     def run_game(self):
         self.welcome_player()
