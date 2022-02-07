@@ -14,6 +14,4 @@ class Player:
         pass
 
     def choose_player_mode(self):
-        
-
-        
+        pass

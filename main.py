@@ -1,3 +1,5 @@
+from cProfile import run
 from game import Game
 
-game_play = ''
+main_game = Game ()
+main_game.run_game()
