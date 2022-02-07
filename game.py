@@ -21,7 +21,9 @@ class Game:
         print("Rock crushes Scissors, Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons Spock, Spock smashes Scissors, Scissors decapitates Lizard. Best 2 out of 3 wins the game!")
 
     def choose_player_mode(mode):
-        mode = int(input('(1) Vs. Computer (2) Multiplayer'))
+        print("Choose (1) for Vs Computer (2) for Multiplayer")
+        mode = int(input())
+        
 
     
     

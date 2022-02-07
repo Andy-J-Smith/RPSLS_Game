@@ -1,5 +1,4 @@
-from ai import Ai
-from human import Human
+
 
 class Player:
 
