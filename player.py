@@ -12,5 +12,8 @@ class Player:
 
     def choose_guesture(self):
         pass
-    
+
+    def choose_player_mode(self):
+        
+
         
