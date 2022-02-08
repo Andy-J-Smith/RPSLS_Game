@@ -1,3 +1,4 @@
+from typing_extensions import Self
 from player import Player
 from ai import Ai
 
@@ -21,8 +22,13 @@ class Game:
         print("Rock crushes Scissors, Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons Spock, Spock smashes Scissors, Scissors decapitates Lizard. Best 2 out of 3 wins the game!")
 
     def choose_player_mode(mode):
-        print("Choose (1) for Vs Computer (2) for Multiplayer")
-        mode = int(input())
+        
+        mode = input("Press 1 for single player. Press 2 for multiplayer")
+        if mode == '1':
+            self.Ai = Ai()
+
+            
+
         
 
     

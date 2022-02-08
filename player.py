@@ -1,5 +1,8 @@
 
 
+from random import random
+
+
 class Player:
 
     def __init__(self):
@@ -10,7 +13,7 @@ class Player:
 
 
     def choose_guesture(self):
-        pass
+        self.list_of_guestures = self.list_of_guestures
 
     def choose_player_mode(self):
         pass
