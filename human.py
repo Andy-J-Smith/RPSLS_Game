@@ -14,6 +14,7 @@ class Human(Player):
             print(f'Press {count} to select {move}')
             count += 1
         human_choice = int(input())
+        print(f"please enter a number {human_choice}")
         self.chosen_guesture = self.list_of_guestures[human_choice]
         print(f'{self.chosen_guesture} was selected by the human')
 

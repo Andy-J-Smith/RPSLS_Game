@@ -20,8 +20,8 @@ class Game:
         self.welcome_player()
         self.rules_of_game()
         self.choose_player_mode()
+        self.player_one.choose_guesture()
         self.player_two.choose_guesture()
-        
     
     def welcome_player(self):
         print("Welcome to the game, the rules are as stated before you. Please enjoy the game")
@@ -30,12 +30,15 @@ class Game:
         print("Rock crushes Scissors, Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard, Lizard poisons Spock, Spock smashes Scissors, Scissors decapitates Lizard. Best 2 out of 3 wins the game!")
 
     def choose_player_mode(self):
+        valid = ('1','2')
         game_mode = input('Press 1 for singleplayer. Press 2 for multiplayer')
+        while game_mode not in valid:
+            game_mode = input('INVALID RESPONSE! Press 1 for singleplayer. Press 2 for multiplayer')
         if game_mode == '1':
             self.player_two = Ai()
         elif game_mode == '2':
             self.player_two = Human()
-        print(self.player_two)  
+        print(self.player_two.name)  
         
         # mode = input("Press 1 for single player. Press 2 for multiplayer")
         # if mode == '1':
