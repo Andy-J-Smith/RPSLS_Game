@@ -5,6 +5,7 @@ class Human(Player):
 
     def __init__(self):
         super().__init__()
+        self.name = "Player"
 
 
     def choose_guesture(self):
