@@ -22,6 +22,7 @@ class Game:
         self.choose_player_mode()
         self.player_one.choose_guesture()
         self.player_two.choose_guesture()
+        self.play_round()
     
     def welcome_player(self):
         print("Welcome to the game, the rules are as stated before you. Please enjoy the game")
@@ -46,8 +47,6 @@ class Game:
         # elif mode == '2':
         #     pass
            
-            
-
     def play_round(self):     # check if tie, check if player one wins else player 2 wins
         print("starting new round")
         self.player_one.choose_guesture()
@@ -57,6 +56,21 @@ class Game:
         elif self.player_one.chosen_guesture == "Rock" and self.player_two.chosen_guesture == "Scissors" or self.player_two.chosen_guesture == "Lizard":
             print(f'{self.player_one.name} player one wins round')
             self.player_one.wins += 1
+        elif self.player_one.chosen_guesture == "Scissors" and self.player_two.chosen_guesture == "Paper" or self.player_two.chosen_guesture == "Lizard":
+            print(f'{self.player_one.name} player one wins round')
+            self.player_one.wins += 1
+        elif self.player_one.chosen_guesture == "Paper" and self.player_two.chosen_guesture == "Rock" or self.player_two.chosen_guesture == "Spock":
+            print(f'{self.player_one.name} player one wins round')
+            self.player_one.wins += 1
+        elif self.player_one.chosen_guesture == "Lizard" and self.player_two.chosen_guesture == "Spock" or self.player_two.chosen_guesture == "Paper":
+            print(f'{self.player_one.name} player one wins round')
+            self.player_one.wins += 1
+        elif self.player_one.chosen_guesture == "Spock" and self.player_two.chosen_guesture == "Scissors" or self.player_two.chosen_guesture == "Rock":
+            print(f'{self.player_one.name} player one wins round')
+            self.player_one.wins += 1
+        else:
+            print(f'{self.player_two.name} player two wins round')
+            self.player_two.wins += 1
 
     
     
