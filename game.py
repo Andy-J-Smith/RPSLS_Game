@@ -1,6 +1,9 @@
 from human import Human
 from ai import Ai
 
+# test to make sure human can make choice 
+# start writing the endt of turn check to see who won
+
 # class Game:    old code
 
 #     def __init__(self):
@@ -17,6 +20,7 @@ class Game:
         self.welcome_player()
         self.rules_of_game()
         self.choose_player_mode()
+        self.player_two.choose_guesture()
         
     
     def welcome_player(self):
@@ -41,9 +45,18 @@ class Game:
            
             
 
-        
+    def play_round(self):     # check if tie, check if player one wins else player 2 wins
+        print("starting new round")
+        self.player_one.choose_guesture()
+        self.player_two.choose_guesture()
+        if self.player_one.chosen_guesture == self.player_two.chosen_guesture:
+            print("its a a tie")
+        elif self.player_one.chosen_guesture == "Rock" and self.player_two.chosen_guesture == "Scissors" or self.player_two.chosen_guesture == "Lizard":
+            print(f'{self.player_one.name} player one wins round')
+            self.player_one.wins += 1
 
     
     
     def display_winner(self):
         print("Congratulations {} You have won the game!")
+        pass
