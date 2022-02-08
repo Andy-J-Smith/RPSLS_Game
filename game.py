@@ -20,8 +20,6 @@ class Game:
         self.welcome_player()
         self.rules_of_game()
         self.choose_player_mode()
-        self.player_one.choose_guesture()
-        self.player_two.choose_guesture()
         self.play_round()
     
     def welcome_player(self):
@@ -32,14 +30,14 @@ class Game:
 
     def choose_player_mode(self):
         valid = ('1','2')
-        game_mode = input('Press 1 for singleplayer. Press 2 for multiplayer')
+        game_mode = input('Press 1 for singleplayer. Press 2 for multiplayer ')
         while game_mode not in valid:
-            game_mode = input('INVALID RESPONSE! Press 1 for singleplayer. Press 2 for multiplayer')
+            game_mode = input('INVALID RESPONSE! Press 1 for singleplayer. Press 2 for multiplayer ')
         if game_mode == '1':
             self.player_two = Ai()
         elif game_mode == '2':
             self.player_two = Human()
-        print(self.player_two.name)  
+          
         
         # mode = input("Press 1 for single player. Press 2 for multiplayer")
         # if mode == '1':
@@ -48,32 +46,35 @@ class Game:
         #     pass
            
     def play_round(self):     # check if tie, check if player one wins else player 2 wins
-        
-        self.player_one.choose_guesture()
-        self.player_two.choose_guesture()
-        if self.player_one.chosen_guesture == self.player_two.chosen_guesture:
-            print("its a a tie")
-        elif self.player_one.chosen_guesture == "Rock" and self.player_two.chosen_guesture == "Scissors" or self.player_two.chosen_guesture == "Lizard":
-            print(f'{self.player_one.name} player one wins round')
-            self.player_one.wins += 1
-        elif self.player_one.chosen_guesture == "Scissors" and self.player_two.chosen_guesture == "Paper" or self.player_two.chosen_guesture == "Lizard":
-            print(f'{self.player_one.name} player one wins round')
-            self.player_one.wins += 1
-        elif self.player_one.chosen_guesture == "Paper" and self.player_two.chosen_guesture == "Rock" or self.player_two.chosen_guesture == "Spock":
-            print(f'{self.player_one.name} player one wins round')
-            self.player_one.wins += 1
-        elif self.player_one.chosen_guesture == "Lizard" and self.player_two.chosen_guesture == "Spock" or self.player_two.chosen_guesture == "Paper":
-            print(f'{self.player_one.name} player one wins round')
-            self.player_one.wins += 1
-        elif self.player_one.chosen_guesture == "Spock" and self.player_two.chosen_guesture == "Scissors" or self.player_two.chosen_guesture == "Rock":
-            print(f'{self.player_one.name} player one wins round')
-            self.player_one.wins += 1
-        else:
-            print(f'{self.player_two.name} player two wins round')
-            self.player_two.wins += 1
-        print("starting new round")
+        while self.player_one.wins or self.player_two.wins <= 2:
+            self.player_one.choose_guesture()
+            self.player_two.choose_guesture()
+            if self.player_one.chosen_guesture == self.player_two.chosen_guesture:
+                print("its a a tie")
+            elif self.player_one.chosen_guesture == "Rock" and self.player_two.chosen_guesture == "Scissors" or self.player_two.chosen_guesture == "Lizard":
+                print(f'{self.player_one.name} player one wins round')
+                self.player_one.wins += 1
+            elif self.player_one.chosen_guesture == "Scissors" and self.player_two.chosen_guesture == "Paper" or self.player_two.chosen_guesture == "Lizard":
+                print(f'{self.player_one.name} player one wins round')
+                self.player_one.wins += 1
+            elif self.player_one.chosen_guesture == "Paper" and self.player_two.chosen_guesture == "Rock" or self.player_two.chosen_guesture == "Spock":
+                print(f'{self.player_one.name} player one wins round')
+                self.player_one.wins += 1
+            elif self.player_one.chosen_guesture == "Lizard" and self.player_two.chosen_guesture == "Spock" or self.player_two.chosen_guesture == "Paper":
+                print(f'{self.player_one.name} player one wins round')
+                self.player_one.wins += 1
+            elif self.player_one.chosen_guesture == "Spock" and self.player_two.chosen_guesture == "Scissors" or self.player_two.chosen_guesture == "Rock":
+                print(f'{self.player_one.name} player one wins round')
+                self.player_one.wins += 1
+            else:
+                print(f'{self.player_two.name} player two wins round')
+                self.player_two.wins += 1
+            print("starting new round")
+    #     else:
+    #         self.player_one.wins or self.player_two.wins == 2
+    #         print(self.display_winner)
     
-    
-    def display_winner(self):
-        print("Congratulations {} You have won the game!")
-        pass
+    # def display_winner(self):
+    #    winner_1 = self.player_one and self.player_two 
+    #    print("Congratulations {winner_1} You have won the game!")
+
