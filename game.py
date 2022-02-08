@@ -21,6 +21,7 @@ class Game:
         self.rules_of_game()
         self.choose_player_mode()
         self.play_round()
+        self.display_winner()
     
     def welcome_player(self):
         print("Welcome to the game, the rules are as stated before you. Please enjoy the game")
@@ -46,7 +47,8 @@ class Game:
         #     pass
            
     def play_round(self):     # check if tie, check if player one wins else player 2 wins
-        while self.player_one.wins <=2 or self.player_two.wins <= 2:
+        while self.player_one.wins < 2 and self.player_two.wins < 2:
+            print("starting new round")
             self.player_one.choose_guesture()
             self.player_two.choose_guesture()
             if self.player_one.chosen_guesture == self.player_two.chosen_guesture:
@@ -69,12 +71,14 @@ class Game:
             else:
                 print(f'{self.player_two.name} player two wins round')
                 self.player_two.wins += 1
-            print("starting new round")
-        
-            # self.player_one.wins == 2 or self.player_two.wins == 2
-            # print(self.display_winner)
+           
+      
+
     
     def display_winner(self):
-       winner_1 = self.player_one or self.player_two 
-       print("Congratulations {winner_1} You have won the game!")
+        if self.player_one.wins == 2:
+            print(f'{self.player_one.name} is the winner') 
+        elif self.player_two.wins == 2:
+            print (f'{self.player_two.name} is the winner')
 
+ 
