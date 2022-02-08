@@ -18,7 +18,7 @@ class Human(Player):
         game_mode = human_choice
         while game_mode not in valid:
             game_mode = input('INVALID RESPONSE! Please select from {human_choice}')
-        print(f"yoo chose! {human_choice}")
+        print(f"you chose! {human_choice}")
         self.chosen_guesture = self.list_of_guestures[human_choice]
         print(f'{self.chosen_guesture} was selected by the human')
 

@@ -46,7 +46,7 @@ class Game:
         #     pass
            
     def play_round(self):     # check if tie, check if player one wins else player 2 wins
-        while self.player_one.wins or self.player_two.wins <= 2:
+        while self.player_one.wins <=2 or self.player_two.wins <= 2:
             self.player_one.choose_guesture()
             self.player_two.choose_guesture()
             if self.player_one.chosen_guesture == self.player_two.chosen_guesture:
@@ -70,11 +70,11 @@ class Game:
                 print(f'{self.player_two.name} player two wins round')
                 self.player_two.wins += 1
             print("starting new round")
-    #     else:
-    #         self.player_one.wins or self.player_two.wins == 2
-    #         print(self.display_winner)
+        
+            # self.player_one.wins == 2 or self.player_two.wins == 2
+            # print(self.display_winner)
     
-    # def display_winner(self):
-    #    winner_1 = self.player_one and self.player_two 
-    #    print("Congratulations {winner_1} You have won the game!")
+    def display_winner(self):
+       winner_1 = self.player_one or self.player_two 
+       print("Congratulations {winner_1} You have won the game!")
 
